@@ -1,20 +1,21 @@
 name: release
 
-on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: |
-          New version for the release
-          If the version is in format <major>.<minor>.<patch> a new release is emitted.
-          Otherwise for other format ( for example <major>.<minor>.<patch>-beta.1 ), a prerelease is emitted.
-        default: "0.0.1"
-        required: true
-        type: string
-      description:
-        description: "Version description"
-        type: string
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       version:
+#         description: |
+#           New version for the release
+#           If the version is in format <major>.<minor>.<patch> a new release is emitted.
+#           Otherwise for other format ( for example <major>.<minor>.<patch>-beta.1 ), a prerelease is emitted.
+#         default: "0.0.1"
+#         required: true
+#         type: string
+#       description:
+#         description: "Version description"
+#         type: string
+# 
 jobs:
   release:
     runs-on: ubuntu-latest
